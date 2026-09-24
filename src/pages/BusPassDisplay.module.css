@@ -1,0 +1,305 @@
+.displayPage {
+    min-height: 100vh;
+    padding: 6rem 2rem 4rem;
+    background-color: #f8fafc;
+    position: relative;
+    overflow: hidden;
+    font-family: 'Outfit', sans-serif;
+}
+
+.bgGlow {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 50%;
+    height: 50%;
+    background: radial-gradient(circle, rgba(124, 58, 237, 0.03) 0%, rgba(255, 255, 255, 0) 70%);
+    pointer-events: none;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 10;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 3rem;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid #f1f5f9;
+}
+
+.navGroup {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.iconBtn {
+    width: 48px;
+    height: 48px;
+    background: white;
+    border-radius: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #64748b;
+    border: 1px solid #e2e8f0;
+    cursor: pointer;
+    transition: all 0.2s;
+    font-size: 1rem;
+}
+
+.iconBtn:hover {
+    border-color: #7c3aed;
+    color: #7c3aed;
+}
+
+.headerText h1 {
+    font-size: 1.75rem;
+    font-weight: 800;
+    margin: 0;
+    color: #0f172a;
+}
+
+.headerText p {
+    margin: 0.125rem 0 0;
+    font-size: 0.875rem;
+    color: #94a3b8;
+    font-weight: 600;
+}
+
+.actionGroup {
+    display: flex;
+    gap: 0.75rem;
+}
+
+.primaryAction {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0 1.5rem;
+    height: 48px;
+    background: #0f172a;
+    color: white;
+    border: none;
+    border-radius: 14px;
+    font-weight: 700;
+    cursor: pointer;
+    box-shadow: 0 10px 15px -3px rgba(15, 23, 42, 0.1);
+}
+
+.secondaryAction {
+    width: 48px;
+    height: 48px;
+    background: white;
+    border-radius: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #64748b;
+    border: 1px solid #e2e8f0;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.secondaryAction:hover {
+    background: #f8fafc;
+    color: #0f172a;
+}
+
+.mainLayout {
+    display: grid;
+    grid-template-columns: 1fr 340px;
+    gap: 3rem;
+}
+
+.viewerLabel {
+    display: flex;
+    align-items: center;
+    gap: 0.625rem;
+    font-size: 0.75rem;
+    font-weight: 800;
+    color: #94a3b8;
+    letter-spacing: 0.15em;
+    margin-bottom: 2rem;
+}
+
+.cardFrame {
+    display: flex;
+    justify-content: center;
+    padding: 3rem;
+    background: white;
+    border-radius: 32px;
+    border: 1px solid #f1f5f9;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.02);
+}
+
+.metaCard {
+    background: white;
+    padding: 2rem;
+    border-radius: 24px;
+    border: 1px solid #f1f5f9;
+    margin-bottom: 2rem;
+}
+
+.metaHeader {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    color: #0f172a;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+}
+
+.infoList {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.infoItem label {
+    display: block;
+    font-size: 0.625rem;
+    font-weight: 800;
+    color: #94a3b8;
+    letter-spacing: 0.05em;
+    margin-bottom: 0.25rem;
+}
+
+.infoItem span {
+    font-weight: 700;
+    color: #1e293b;
+}
+
+.expiryText {
+    color: #ef4444 !important;
+}
+
+.securityBox {
+    display: flex;
+    gap: 1rem;
+    padding: 1.5rem;
+    background: #f5f3ff;
+    border-radius: 20px;
+    border: 1px solid rgba(124, 58, 237, 0.1);
+}
+
+.secIcon {
+    font-size: 1.25rem;
+    color: #7c3aed;
+}
+
+.securityBox h5 {
+    margin: 0;
+    font-size: 0.8125rem;
+    font-weight: 800;
+    color: #7c3aed;
+    text-transform: uppercase;
+}
+
+.securityBox p {
+    margin: 0.25rem 0 0;
+    font-size: 0.75rem;
+    color: #6d28d9;
+    line-height: 1.4;
+    opacity: 0.8;
+}
+
+.loadingBox {
+    height: 60vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1.5rem;
+}
+
+.spin {
+    animation: rotate 1s linear infinite;
+}
+
+@keyframes rotate {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@media (max-width: 1024px) {
+    .mainLayout {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+}
+
+@media (max-width: 640px) {
+    .header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1.5rem;
+    }
+
+    .actionGroup {
+        width: 100%;
+    }
+
+    .primaryAction {
+        flex: 1;
+    }
+
+    .cardFrame {
+        padding: 1.5rem;
+        border-radius: 20px;
+    }
+
+    .displayPage {
+        padding-inline: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .displayPage {
+        padding: 5.4rem 0.75rem 3rem;
+    }
+
+    .header {
+        gap: 1rem;
+        margin-bottom: 2rem;
+    }
+
+    .navGroup,
+    .actionGroup {
+        width: 100%;
+    }
+
+    .actionGroup {
+        flex-wrap: wrap;
+    }
+
+    .primaryAction {
+        flex: 1 1 100%;
+        justify-content: center;
+    }
+
+    .secondaryAction {
+        flex: 1 1 calc(50% - 0.375rem);
+    }
+
+    .cardFrame,
+    .metaCard {
+        padding: 1rem;
+        border-radius: 18px;
+    }
+
+    .securityBox {
+        flex-direction: column;
+    }
+}

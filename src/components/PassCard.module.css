@@ -1,0 +1,364 @@
+.passCard {
+  width: 100%;
+  max-width: 100%;
+  margin: 2rem auto;
+}
+
+.mainContent {
+  width: 100%;
+  height: fit-content;
+  background: linear-gradient(135deg, #6366F1 0%, #7C3AED 100%);
+  border-radius: 12px;
+  padding: 2.5rem;
+  color: white;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.downloadButton {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: #4f46e5;
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  font-size: 0.875rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  cursor: pointer;
+
+}
+
+.downloadButton:hover {
+  background: #4338ca;
+}
+
+.header {
+  position: relative;
+  margin-bottom: 1.5rem;
+}
+
+.title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  margin-bottom: 0.25rem;
+}
+
+.subtitle {
+  font-size: 1.1rem;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.validTillBox {
+  position: absolute;
+  top: 0;
+  right: 0;
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 8px;
+  padding: 0.75rem 1.5rem;
+  text-align: center;
+}
+
+.validTillLabel {
+  font-size: 0.875rem;
+  margin-bottom: 0.25rem;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.validTillValue {
+  font-size: 1.25rem;
+  font-weight: 600;
+}
+.divider {
+  height: 1px;
+  background: rgba(255, 255, 255, 0.2);
+  margin: 1.5rem 0;
+}
+
+.infoSection {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 2rem;
+  margin: 2rem 0;
+}
+
+.photoSection {
+  width: 140px;
+}
+
+.photoBox {
+  width: 160px;
+  height: 180px;
+  background: rgba(255, 255, 255, 0.1);
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 0.875rem;
+  text-align: center;
+}
+
+.photo {
+  width: 140px;
+  height: 160px;
+  border-radius: 8px;
+  object-fit: cover;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+.details {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.label {
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 0.875rem;
+  font-weight: 500;
+}
+
+.value {
+  background: white;
+  color: #1F2937;
+  padding: 0.75rem 1rem;
+  border-radius: 6px;
+  font-weight: 500;
+  font-size: 1rem;
+}
+
+.footer {
+  display: flex;
+  justify-content: space-between;
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 0.875rem;
+  margin-top: 1rem;
+  padding-top: 1rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+}
+.subtitle {
+  color: rgba(255, 255, 255, 0.9);
+  margin-top: 0.25rem;
+  font-size: 0.875rem;
+}
+
+.validTill {
+  position: absolute;
+  top: 0;
+  right: 0;
+  background: rgba(255, 255, 255, 0.2);
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  font-size: 0.875rem;
+}
+
+.content {
+  display: grid;
+  grid-template-columns: 120px 1fr;
+  gap: 2rem;
+  align-items: start;
+}
+
+.photoSection {
+  width: 120px;
+}
+
+.photoBox {
+  width: 150px;
+  height: 180px;
+  border-radius: 0.5rem;
+  background: rgba(255, 255, 255, 0.9);
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid rgba(255, 255, 255, 0.5);
+}
+
+.photo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.photoPlaceholder {
+  color: #4568dc;
+  font-size: 0.875rem;
+  font-weight: 500;
+  text-align: center;
+}
+
+.photo {
+  object-fit: cover;
+}
+
+.details {
+  flex: 1;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+.field {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 0.5rem;
+  padding: 1rem 1.25rem;
+  min-height: 80px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.fieldLabel {
+  display: block;
+  font-size: 0.75rem;
+  color: rgba(255, 255, 255, 0.8);
+  margin-bottom: 0.5rem;
+  letter-spacing: 0.05em;
+}
+
+.fieldValue {
+  font-size: 1.125rem;
+  font-weight: 500;
+  color: white;
+  line-height: 1.4;
+}
+
+.footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  padding-top: 1rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.issueInfo {
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 0.875rem;
+}
+
+.issueInfo p {
+  margin: 0;
+}
+
+.qrSection {
+  text-align: center;
+  background: white;
+  padding: 1.5rem;
+  border-radius: 0.75rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.qrLabel {
+  color: #4568dc;
+  font-size: 0.875rem;
+  margin-top: 0.75rem;
+  font-weight: 500;
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+  .mainContent {
+    padding: 2rem 1.5rem;
+  }
+
+  .title {
+    font-size: 2rem;
+  }
+
+  .content {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .photoBox {
+    width: 120px;
+    height: 150px;
+    margin: 0 auto;
+  }
+
+  .row {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .downloadButton {
+    position: static;
+    width: 100%;
+    margin-top: 1rem;
+    justify-content: center;
+  }
+
+  .validTill {
+    position: static;
+    width: 100%;
+    text-align: center;
+    margin-bottom: 1rem;
+  }
+
+  .header {
+    text-align: center;
+  }
+
+  .footer {
+    flex-direction: column;
+    gap: 0.5rem;
+    text-align: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .mainContent {
+    padding: 1.5rem 1rem;
+    border-radius: 8px;
+  }
+
+  .title {
+    font-size: 1.75rem;
+  }
+
+  .subtitle {
+    font-size: 0.8rem;
+  }
+
+  .photoBox {
+    width: 100px;
+    height: 120px;
+  }
+
+  .value {
+    padding: 0.5rem 0.75rem;
+    font-size: 0.9rem;
+  }
+
+  .label {
+    font-size: 0.8rem;
+  }
+
+  .qrSection {
+    padding: 1rem;
+  }
+
+  .qrLabel {
+    font-size: 0.8rem;
+  }
+}

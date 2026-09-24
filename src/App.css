@@ -1,0 +1,199 @@
+:root {
+  /* Primary Colors */
+  --primary-blue: #0052cc;
+  --primary-dark: #0747a6;
+  --primary-light: #deebff;
+  --navbar-height: 4.5rem;
+  
+  /* Text Colors */
+  --text-primary: #172b4d;
+  --text-secondary: #5e6c84;
+  --text-white: #ffffff;
+  --text-error: #de350b;
+  --text-success: #006644;
+  
+  /* Background Colors */
+  --background-white: #ffffff;
+  --background-light: #f4f5f7;
+  --background-lighter: #fafbfc;
+  --background-blue-light: #f0f6ff;
+  
+  /* Border Colors */
+  --border-color: #dfe1e6;
+  --border-focus: #4c9aff;
+  
+  /* Shadow Effects */
+  --shadow-sm: 0 1px 3px rgba(9, 30, 66, 0.13);
+  --shadow-md: 0 3px 6px rgba(9, 30, 66, 0.16);
+  --shadow-lg: 0 8px 16px rgba(9, 30, 66, 0.25);
+  
+  /* Status Colors */
+  --status-pending: #f5a623;
+}
+
+/* Main content padding for navbar */
+.App {
+  padding-top: var(--navbar-height);
+}
+
+/* Page container styles */
+.page-container {
+  max-width: 1280px;
+  margin: 2rem auto;
+  padding: 0 1.5rem;
+}
+
+/* Mobile responsive adjustments */
+@media (max-width: 768px) {
+  .page-container {
+    margin: 1rem auto;
+    padding: 0 1rem;
+  }
+
+  .form {
+    margin: 1rem auto;
+    padding: 1.5rem;
+    border-radius: 8px;
+  }
+
+  .form input {
+    padding: 0.625rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .button {
+    padding: 0.625rem 1.25rem;
+    font-size: 0.9rem;
+  }
+
+  .pass-card {
+    margin: 1rem auto;
+    padding: 1.5rem;
+    border-radius: 6px;
+  }
+
+  .admin-panel,
+  .admin-login,
+  .home,
+  .student-dashboard {
+    padding: 1.5rem 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .page-container {
+    padding: 0 0.75rem;
+  }
+
+  .form {
+    padding: 1rem;
+  }
+
+  .pass-card {
+    padding: 1rem;
+  }
+
+  .admin-panel,
+  .admin-login,
+  .home,
+  .student-dashboard {
+    padding: 1rem 0.75rem;
+  }
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  margin: 0;
+  padding: 0;
+  background: var(--background-light);
+  color: var(--text-primary);
+  line-height: 1.5;
+  letter-spacing: 0.01em;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Modern card styling */
+.card {
+  background: white;
+  border-radius: 8px;
+  box-shadow: var(--shadow-sm);
+  transition: box-shadow 0.3s ease;
+  border: 1px solid var(--border-color);
+}
+
+.card:hover {
+  box-shadow: var(--shadow-md);
+}
+
+/* Form styling */
+.form {
+  max-width: 500px;
+  margin: 2rem auto;
+  padding: 2rem;
+  background: white;
+  border-radius: 12px;
+  box-shadow: var(--shadow-md);
+}
+
+.form input {
+  width: 100%;
+  padding: 0.75rem;
+  margin-bottom: 1rem;
+  border: 1px solid var(--border-color);
+  border-radius: 6px;
+  transition: border-color 0.2s ease;
+}
+
+.form input:focus {
+  outline: none;
+  border-color: var(--primary-blue);
+  box-shadow: 0 0 0 2px var(--primary-light);
+}
+
+/* Button styling */
+.button {
+  padding: 0.75rem 1.5rem;
+  background-color: var(--primary-blue);
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  cursor: pointer;
+}
+
+.form button:hover {
+  background-color: #0056b3;
+}
+
+.pass-card {
+  max-width: 400px;
+  margin: 2rem auto;
+  padding: 2rem;
+  border: 2px solid #007bff;
+  border-radius: 8px;
+  text-align: center;
+}
+
+.admin-panel, .admin-login {
+  padding: 2rem;
+  text-align: center;
+}
+
+.home {
+  text-align: center;
+  padding: 2rem;
+}
+
+.student-dashboard {
+  text-align: center;
+  padding: 2rem;
+}
+
+.qr-scanner {
+  text-align: center;
+  padding: 2rem;
+  border: 2px dashed #ccc;
+  margin: 2rem;
+}

@@ -1,0 +1,66 @@
+[
+  {
+    "_id": "69aed26c683545364db4565d",
+    "id": 4,
+    "username": "hod_eee",
+    "password": "HOD@EEE",
+    "role": "hod",
+    "department": "EEE",
+    "name": "HOD EEE"
+  },
+  {
+    "_id": "69aed26c683545364db4565c",
+    "id": 3,
+    "username": "hod_cse",
+    "password": "HOD@CSE",
+    "role": "hod",
+    "department": "CSE",
+    "name": "HOD CSE"
+  },
+  {
+    "_id": "69aed26c683545364db4565f",
+    "id": 6,
+    "username": "hod_mech",
+    "password": "HOD@MECH",
+    "role": "hod",
+    "department": "MECH",
+    "name": "HOD MECH"
+  },
+  {
+    "_id": "69aed26c683545364db4565a",
+    "id": 1,
+    "username": "admin",
+    "password": "$2b$10$uDoENkuvR7vW8QtWi8k13ekRxdYRrm79N28LPuBUuDjVNMjJJgeIe",
+    "role": "admin",
+    "department": null,
+    "name": "System Administrator",
+    "updatedAt": "2026-03-12T15:15:21.117Z"
+  },
+  {
+    "_id": "69aed26c683545364db45660",
+    "id": 7,
+    "username": "hod_civil",
+    "password": "HOD@CIVIL",
+    "role": "hod",
+    "department": "CIVIL",
+    "name": "HOD CIVIL"
+  },
+  {
+    "_id": "69aed26c683545364db4565b",
+    "id": 2,
+    "username": "principal",
+    "password": "Principal@demo",
+    "role": "principal",
+    "department": null,
+    "name": "Principal Office"
+  },
+  {
+    "_id": "69aed26c683545364db4565e",
+    "id": 5,
+    "username": "hod_ece",
+    "password": "HOD@ECE",
+    "role": "hod",
+    "department": "ECE",
+    "name": "HOD ECE"
+  }
+]
