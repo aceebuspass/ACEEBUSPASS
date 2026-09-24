@@ -1,23 +1,13 @@
 {
-  "version": 2,
-  "build": {
-    "env": {
-      "NODE_VERSION": "20"
-    }
-  },
-  "functions": {
-    "api/index.js": {
-      "maxDuration": 30,
-      "memory": 1024
-    }
-  },
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "outputDirectory": "build",
   "rewrites": [
     {
-      "source": "/api/(.*)",
-      "destination": "/api/index.js"
+      "source": "/api/:path*",
+      "destination": "https://aceebuspass.onrender.com"
     },
     {
-      "source": "/((?!api/).*)",
+      "source": "/(.*)",
       "destination": "/index.html"
     }
   ]
