@@ -1,0 +1,48 @@
+services:
+  - type: web
+    name: ACEEBUSPASS
+    runtime: node
+    plan: free
+    branch: main
+
+    # Project root contains package.json
+    # Leave Root Directory unset/empty.
+
+    buildCommand: npm ci
+    startCommand: npm run backend
+
+    healthCheckPath: /api/health
+
+    autoDeployTrigger: commit
+
+    envVars:
+      # Node version
+      - key: NODE_VERSION
+        value: 24.21.0
+
+      # Application environment
+      - key: NODE_ENV
+        value: production
+
+      # MongoDB Atlas
+      - key: MONGODB_URI
+        sync: false
+
+      # Razorpay test account
+      - key: RAZORPAY_KEY_ID
+        sync: false
+
+      - key: RAZORPAY_KEY_SECRET
+        sync: false
+
+      # Vercel Blob / file storage
+      - key: BLOB_READ_WRITE_TOKEN
+        sync: false
+
+      # Public backend URL
+      - key: BASE_URL
+        sync: false
+
+      # Vercel frontend URL
+      - key: FRONTEND_URL
+        sync: false
