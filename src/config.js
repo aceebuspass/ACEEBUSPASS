@@ -1,39 +1,102 @@
-// Detect the backend URL for images and API
-// In dev, React runs on :3000 or :3002 and backend on :3001
-// In prod, they are served together
-const BACKEND_BASE = (() => {
-  if (typeof window !== 'undefined') {
-    const { protocol, hostname, port } = window.location;
-    // Strictly stay on the same host if not localhost
-    if (hostname === 'localhost' || hostname === '127.0.0.1') {
-      return `${protocol}//${hostname}:3003`;
-    }
-// On production (e.g. Vercel), the backend is at the same origin
+// src/config.js
+
+// ------------------------------------------------------------
+// Environment detection
+// ------------------------------------------------------------
+const isBrowser = typeof window !== 'undefined';
+
+const hostname = isBrowser
+  ? window.location.hostname
+  : '';
+
+const isLocal =
+  hostname === 'localhost' ||
+  hostname === '127.0.0.1';
+
+// ------------------------------------------------------------
+// Backend URL
+// ------------------------------------------------------------
+// Local:
+// React frontend -> localhost:3003
+// Express backend -> localhost:3001
+//
+// Production:
+// Frontend -> Vercel
+// Backend  -> Render
+// ------------------------------------------------------------
+const RENDER_BACKEND_URL = 'https://aceebuspass.onrender.com';
+
+const BACKEND_BASE = isLocal
+  ? 'http://localhost:3001'
+  : RENDER_BACKEND_URL;
+
+// ------------------------------------------------------------
+// API Base URL
+// ------------------------------------------------------------
+// Local:
+//   http://localhost:3001/api
+//
+// Production:
+//   /api
+//
+// Vercel's vercel.json should rewrite /api/*
+// to the Render backend.
+// ------------------------------------------------------------
+export const API_BASE_URL = isLocal
+  ? `${BACKEND_BASE}/api`
+  : '/api';
+
+// ------------------------------------------------------------
+// Fallback API URLs
+// ------------------------------------------------------------
+// Only use fallbacks during local development.
+// Production should use Vercel's /api rewrite.
+// ------------------------------------------------------------
+export const FALLBACK_API_URLS = isLocal
+  ? [
+      'http://localhost:3001/api',
+      'http://127.0.0.1:3001/api'
+    ]
+  : [];
+
+// ------------------------------------------------------------
+// Image URL helper
+// ------------------------------------------------------------
+// Local:
+//   /uploads/file.jpg
+//   -> http://localhost:3001/uploads/file.jpg
+//
+// Production:
+//   /uploads/file.jpg
+//   -> https://aceebuspass.onrender.com/uploads/file.jpg
+// ------------------------------------------------------------
+export const getImageUrl = (path) => {
+  if (!path) {
     return '';
   }
-  return '';
-})();
 
-// API configuration
-export const API_BASE_URL = `${BACKEND_BASE}/api`;
-
-// Backup API URLs only if on localhost
-const isLocal = typeof window !== 'undefined' && 
-                (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1');
-
-export const FALLBACK_API_URLS = isLocal ? ['http://localhost:3001/api', 'http://127.0.0.1:3001/api'] : [];
-
-// Image URL helper
-export const getImageUrl = (path) => {
-  if (!path) return '';
-  if (path.startsWith('blob:')) return path;
-  // If already a full absolute URL or data URI, return as-is
-  if (path.startsWith('http://') || path.startsWith('https://') || path.startsWith('data:')) {
-    // In development, backend returns http://localhost:3001/uploads/...
-    // This should work directly
+  // Blob URLs
+  if (path.startsWith('blob:')) {
     return path;
   }
-  // Relative path like /uploads/filename -> prepend backend base
-  const cleanPath = path.startsWith('/') ? path : `/${path}`;
+
+  // Data URLs
+  if (path.startsWith('data:')) {
+    return path;
+  }
+
+  // Already an absolute URL
+  if (
+    path.startsWith('http://') ||
+    path.startsWith('https://')
+  ) {
+    return path;
+  }
+
+  // Normalize relative path
+  const cleanPath = path.startsWith('/')
+    ? path
+    : `/${path}`;
+
   return `${BACKEND_BASE}${cleanPath}`;
 };
